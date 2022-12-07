@@ -1,0 +1,9 @@
+.App-new-contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.App-new-contact-form *{
+    width: 400px;
+}
