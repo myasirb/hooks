@@ -10,8 +10,10 @@ const Home = () => {
         <NewContact />
 
         <hr/>
+        
+        <ContactList contacts={[{name: "Muhammad Yasir", number: "03064171644"}]}/>
 
-        <ContactList contacts={[{name: "Muhammad Yasir", number: "03064171644"}, {name: "Muhammad Yasir", number: "03064171644"},{name: "Muhammad Yasir", number: "03064171644"}]}/>
+        {/* <ContactList contacts={[]}/> */}
     </div>
   )
 }

@@ -6,7 +6,7 @@ const ContactItem = ({contact, index}) => {
         <th scope="row">{index}</th>
         <td>{contact.name}</td>
         <td>
-          <a target="_blank" href={`tel:${contact.number}`}>{contact.number}</a>
+          <a rel="noreferrer" target="_blank" href={`tel:${contact.number}`}>{contact.number}</a>
         </td>
       </tr>
   );
