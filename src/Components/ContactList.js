@@ -1,12 +1,16 @@
 import React from "react";
+import ContactItem from "./ContactItem";
 
-const ContactList = () => {
+const ContactList = ({ contacts }) => {
+  if (contacts.length === 0) {
+    return <h1>No Contacts To Show</h1>;
+  }
+
   return (
     <div className="App-contact-list">
       <h2>All Contacts</h2>
 
       <table className="table table-striped">
-        
         <thead>
           <tr>
             <th scope="col">Sr Number</th>
@@ -16,7 +20,9 @@ const ContactList = () => {
         </thead>
 
         <tbody>
-          
+          {contacts.map((contact) => {
+            return <ContactItem key={contact.number} contact={contact} />;
+          })}
         </tbody>
       </table>
     </div>
