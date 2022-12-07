@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import ContactItem from "./ContactItem";
 
 const ContactList = ({ contacts }) => {
+
+  const countContacts = useRef(0);
+
   if (contacts.length === 0) {
     return <h1>No Contacts To Show</h1>;
   }
@@ -21,7 +24,7 @@ const ContactList = ({ contacts }) => {
 
         <tbody>
           {contacts.map((contact) => {
-            return <ContactItem key={contact.number} contact={contact} />;
+            return <ContactItem key={contact.number} contact={contact} index = {++countContacts.current} />;
           })}
         </tbody>
       </table>

@@ -1,9 +1,9 @@
 import React from "react";
 
-const ContactItem = ({contact}) => {
+const ContactItem = ({contact, index}) => {
   return (
       <tr>
-        <th scope="row">1</th>
+        <th scope="row">{index}</th>
         <td>{contact.name}</td>
         <td>
           <a target="_blank" href={`tel:${contact.number}`}>{contact.number}</a>

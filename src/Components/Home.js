@@ -11,7 +11,7 @@ const Home = () => {
 
         <hr/>
 
-        <ContactList contacts={[]}/>
+        <ContactList contacts={[{name: "Muhammad Yasir", number: "03064171644"}, {name: "Muhammad Yasir", number: "03064171644"},{name: "Muhammad Yasir", number: "03064171644"}]}/>
     </div>
   )
 }
