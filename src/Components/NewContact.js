@@ -9,7 +9,7 @@ const NewContact = () => {
 
     const newContact = {
       name: e.target.name.value,
-      contact: e.target.contact.value,
+      number: e.target.number.value,
     };
 
     setList((prevListItem) => {
@@ -30,7 +30,7 @@ const NewContact = () => {
         </div>
         <div className="mb-3">
           <label>Number</label>
-          <input type="number" className="form-control" name="contact" />
+          <input type="number" className="form-control" name="number" />
         </div>
 
         <button type="submit" className="btn btn-primary">
