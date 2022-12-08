@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./Components/Home";
+import Home from "./components/Home";
 
 const App = () => {
   return (
@@ -7,7 +7,7 @@ const App = () => {
       <header className="App-header">Contact Book</header>
 
       <main>
-        <Home></Home>
+        <Home />
       </main>
 
       <footer className="App-footer">Developed By Muhammad Yasir</footer>
