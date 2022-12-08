@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+import { ContactContext } from "../context/ContactContext";
+
 import "./css/NewContact.css";
 
 const NewContact = () => {
+  const contact = useContext(ContactContext);
+
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
 
@@ -14,6 +18,7 @@ const NewContact = () => {
     };
 
     console.log(newContact);
+    contact.push(newContact);
   };
 
   const onNameChangeHandler = (e) => {

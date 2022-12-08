@@ -3,7 +3,7 @@ import ContactItem from "./ContactItem";
 
 const ContactList = ({ contacts }) => {
 
-  const countContacts = useRef(0);
+  let countContacts = 1;
 
   if (contacts.length === 0) {
     return <h1>No Contacts To Show</h1>;
@@ -24,7 +24,7 @@ const ContactList = ({ contacts }) => {
 
         <tbody>
           {contacts.map((contact) => {
-            return <ContactItem key={contact.number} contact={contact} index = {++countContacts.current} />;
+            return <ContactItem key={++countContacts} contact={contact} index = {countContacts} />;
           })}
         </tbody>
       </table>

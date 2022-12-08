@@ -15,7 +15,7 @@ const App = () => {
           <Home />
         </main>
 
-        <footer className="App-footer">Developed By Muhammad Yasir</footer>
+        {/* <footer className="App-footer">Developed By Muhammad Yasir</footer> */}
       </div>
     </ContactContext.Provider>
   );
