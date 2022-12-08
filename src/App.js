@@ -4,10 +4,10 @@ import { useContact } from "./hooks/contact-hook";
 import { ContactContext } from "./context/ContactContext";
 
 const App = () => {
-  const { list, push, pop } = useContact();
+  const { list, count, push, pop } = useContact();
 
   return (
-    <ContactContext.Provider value={{ list: list, push: push, pop: pop }}>
+    <ContactContext.Provider value={{ list: list, count:count , push: push, pop: pop }}>
       <div className="App">
         <header className="App-header">Contact Book</header>
 

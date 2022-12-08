@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export const useContact = () => {
   const [list, setList] = useState([]);
@@ -15,5 +15,9 @@ export const useContact = () => {
     });
   }, []);
 
-  return {list, push,pop};
+  const count = useMemo(()=>{
+    return list.length;
+  },[list])
+
+  return {list, count, push, pop};
 };

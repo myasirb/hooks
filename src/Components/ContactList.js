@@ -1,7 +1,7 @@
 import React from "react";
 import ContactItem from "./ContactItem";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, count }) => {
 
   let countContacts = 1;
 
@@ -11,7 +11,7 @@ const ContactList = ({ contacts }) => {
 
   return (
     <div className="App-contact-list">
-      <h2>All Contacts</h2>
+      <h2>Total Contacts {count} </h2>
 
       <table className="table table-striped">
         <thead>

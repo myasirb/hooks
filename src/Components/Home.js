@@ -14,7 +14,7 @@ const Home = () => {
 
         <hr/>
         
-        <ContactList contacts={contact.list}/>
+        <ContactList contacts={contact.list} count = {contact.count}/>
 
         {/* <ContactList contacts={[]}/> */}
     </div>
