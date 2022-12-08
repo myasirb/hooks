@@ -8,8 +8,10 @@ const NewContact = () => {
 
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const [errorText, setErrorText] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
 
+  
   const newContactSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -21,11 +23,13 @@ const NewContact = () => {
     contact.push(newContact);
   };
 
+
   const onNameChangeHandler = (e) => {
     e.preventDefault();
 
     setName(e.target.value);
   };
+
 
   const onNumberChangeHandler = (e) => {
     e.preventDefault();
@@ -33,14 +37,26 @@ const NewContact = () => {
     setNumber(e.target.value);
   };
 
+
   useEffect(()=>{
-    
+
     if (name.length > 0 && number.length > 0) {
       setFormIsValid(true);
     } else {
       setFormIsValid(false);
     }
   }, [name,number])
+
+
+  useEffect(()=>{
+    if(formIsValid){
+      setErrorText("");
+    }
+    else{
+      setErrorText("All Fields Are Required *");
+    }
+  }, [formIsValid])
+
 
   return (
     <div className="App-new-contact">
@@ -63,6 +79,8 @@ const NewContact = () => {
             onChange={onNumberChangeHandler}
           />
         </div>
+        
+        <p style={{"color": "red"}}>{errorText}</p>
 
         <button type="submit" className="btn btn-primary" disabled={!formIsValid}>
           Submit
