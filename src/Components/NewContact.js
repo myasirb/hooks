@@ -53,7 +53,7 @@ const NewContact = () => {
       setErrorText("");
     }
     else{
-      setErrorText("All Fields Are Required *");
+      setErrorText("* All Fields Are Required");
     }
   }, [formIsValid])
 
