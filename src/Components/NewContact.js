@@ -17,7 +17,6 @@ const NewContact = () => {
       number,
     };
 
-    console.log(newContact);
     contact.push(newContact);
   };
 

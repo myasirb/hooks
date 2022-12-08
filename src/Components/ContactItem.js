@@ -14,7 +14,7 @@ const ContactItem = ({contact, index}) => {
         <th scope="row">{index}</th>
         <td>{contact.name}</td>
         <td>
-          <a rel="noreferrer" target="_blank" href={`tel:${contact.number}`}>{contact.number}</a>
+          <a rel="noreferrer" className="btn btn-link" target="_blank" href={`tel:${contact.number}`}>{contact.number}</a>
         </td>
         <td>
           <button className="btn btn-danger" onClick={deleteContactHandler}>Delete</button>
