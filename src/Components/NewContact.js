@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ContactContext } from "../context/ContactContext";
 
 import "./css/NewContact.css";
@@ -8,6 +8,7 @@ const NewContact = () => {
 
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const [formIsValid, setFormIsValid] = useState(false);
 
   const newContactSubmitHandler = (e) => {
     e.preventDefault();
@@ -32,6 +33,15 @@ const NewContact = () => {
     setNumber(e.target.value);
   };
 
+  useEffect(()=>{
+    
+    if (name.length > 0 && number.length > 0) {
+      setFormIsValid(true);
+    } else {
+      setFormIsValid(false);
+    }
+  }, [name,number])
+
   return (
     <div className="App-new-contact">
       <form className="App-new-contact-form" onSubmit={newContactSubmitHandler}>
@@ -54,7 +64,7 @@ const NewContact = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" disabled={!formIsValid}>
           Submit
         </button>
       </form>
