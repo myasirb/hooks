@@ -5,7 +5,7 @@ const ContactList = ({ contacts }) => {
 
   let countContacts = 1;
 
-  if (contacts.length === 0) {
+  if (!contacts || contacts.length === 0) {
     return <h1>No Contacts To Show</h1>;
   }
 
@@ -19,6 +19,7 @@ const ContactList = ({ contacts }) => {
             <th scope="col">Sr Number</th>
             <th scope="col">Name</th>
             <th scope="col">Contact Number</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
 
