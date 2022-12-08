@@ -11,7 +11,7 @@ export const useContact = () => {
 
   const pop = useCallback((removeContact) => {
     setList((prevList) => {
-      prevList.filter((contact) => contact !== removeContact);
+      return prevList.filter((contact) => contact.number !== removeContact.number);
     });
   }, []);
 
