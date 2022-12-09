@@ -4,59 +4,59 @@ import { ContactContext } from "../context/ContactContext";
 import "./css/NewContact.css";
 
 const NewContact = () => {
+  // use context to get access to contact context methods
   const contact = useContext(ContactContext);
 
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
-  const [errorText, setErrorText] = useState("");
-  const [formIsValid, setFormIsValid] = useState(false);
+  const [name, setName] = useState(""); // input name state
+  const [number, setNumber] = useState(""); // input number state
+  const [errorText, setErrorText] = useState(""); // error message state
+  const [formIsValid, setFormIsValid] = useState(false); // form validity state
 
-  
+  // form submit handler
   const newContactSubmitHandler = (e) => {
     e.preventDefault();
 
+    // create a new contact
     const newContact = {
       name,
       number,
     };
 
+    // push it to context list
     contact.push(newContact);
   };
 
-
+  // update name state
   const onNameChangeHandler = (e) => {
     e.preventDefault();
 
     setName(e.target.value);
   };
 
-
+  // update number state
   const onNumberChangeHandler = (e) => {
     e.preventDefault();
 
     setNumber(e.target.value);
   };
 
-
-  useEffect(()=>{
-
+  // once any change occur in input, re-evaluate the validity of form and update it
+  useEffect(() => {
     if (name.length > 0 && number.length > 0) {
       setFormIsValid(true);
     } else {
       setFormIsValid(false);
     }
-  }, [name,number])
+  }, [name, number]);
 
-
-  useEffect(()=>{
-    if(formIsValid){
+  // when form validity changes, change the error text
+  useEffect(() => {
+    if (formIsValid) {
       setErrorText("");
-    }
-    else{
+    } else {
       setErrorText("* All Fields Are Required");
     }
-  }, [formIsValid])
-
+  }, [formIsValid]);
 
   return (
     <div className="App-new-contact">
@@ -79,10 +79,15 @@ const NewContact = () => {
             onChange={onNumberChangeHandler}
           />
         </div>
-        
-        <p style={{"color": "red"}}>{errorText}</p>
 
-        <button type="submit" className="btn btn-primary" disabled={!formIsValid}>
+        <p style={{ color: "red" }}>{errorText}</p>
+
+        {/* if form is not valid disable the submit button  */}
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={!formIsValid}
+        >
           Submit
         </button>
       </form>
