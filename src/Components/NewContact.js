@@ -24,6 +24,10 @@ const NewContact = () => {
 
     // push it to context list
     contact.push(newContact);
+
+    // reset form
+    setName("");
+    setNumber("");
   };
 
   // update name state
@@ -68,6 +72,7 @@ const NewContact = () => {
             className="form-control"
             name="name"
             onChange={onNameChangeHandler}
+            value = {name}
           />
         </div>
         <div className="mb-3">
@@ -76,6 +81,7 @@ const NewContact = () => {
             type="number"
             className="form-control"
             name="number"
+            value={number}
             onChange={onNumberChangeHandler}
           />
         </div>
