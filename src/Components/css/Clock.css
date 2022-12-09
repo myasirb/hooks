@@ -1,0 +1,6 @@
+.App-clock{
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
