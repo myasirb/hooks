@@ -6,6 +6,7 @@ import { ContactContext } from '../context/ContactContext';
 import './css/Home.css'
 
 const Home = () => {
+  // get context
   const contact = useContext(ContactContext);
 
   return (
@@ -14,9 +15,9 @@ const Home = () => {
 
         <hr/>
         
+        {/* passing list of contacts from context in child component */}
         <ContactList contacts={contact.list} count = {contact.count}/>
 
-        {/* <ContactList contacts={[]}/> */}
     </div>
   )
 }
