@@ -8,6 +8,8 @@ const App = () => {
   const { list, count, push, pop } = useContact();
 
   return (
+    
+    // Context initialized with values retrived from useContact Hook
     <ContactContext.Provider value={{ list: list, count:count , push: push, pop: pop }}>
       <div className="App">
         <header className="App-header">
@@ -18,8 +20,8 @@ const App = () => {
         <main>
           <Home />
         </main>
-
-        {/* <footer className="App-footer">Developed By Muhammad Yasir</footer> */}
+        
+        <footer className="App-footer">Developed By Muhammad Yasir</footer>
       </div>
     </ContactContext.Provider>
   );
