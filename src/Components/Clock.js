@@ -1,8 +1,15 @@
 import React, { useReducer, useRef, useEffect } from "react";
 import "./css/Clock.css";
 
+const getTime = () =>
+  new Date().getHours() +
+  " : " +
+  new Date().getMinutes() +
+  " : " +
+  new Date().getSeconds();
+
 const initialState = {
-  time: new Date().getHours() + ' : ' + new Date().getMinutes() + ' : ' + new Date().getSeconds(),
+  time: getTime(),
   isRunning: true,
 };
 
@@ -12,10 +19,10 @@ function reducer(state, action) {
       return { ...state, isRunning: false };
 
     case "reset":
-      return { time: new Date().getHours() + ' : ' + new Date().getMinutes() + ' : ' + new Date().getSeconds(), isRunning: true };
+      return { time: getTime(), isRunning: true };
 
     case "tick":
-      return { ...state, time: new Date().getHours() + ' : ' + new Date().getMinutes() + ' : ' + new Date().getSeconds()  };
+      return { ...state, time: getTime() };
 
     default:
       throw new Error();
@@ -40,13 +47,15 @@ const Clock = () => {
 
   return (
     <div className="App-clock">
-      <span> Time: {state.time} </span>
+      <span> Clock {state.time} </span>
+
       <button
         className="btn btn-warning"
         onClick={() => dispatch({ type: "stop" })}
       >
         Stop
       </button>
+
       <button
         className="btn btn-light"
         onClick={() => dispatch({ type: "reset" })}
