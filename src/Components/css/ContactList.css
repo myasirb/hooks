@@ -1,0 +1,11 @@
+.App-contact-list-table {
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.App-contact-list-table thead{
+    position: sticky;
+    top: 0;
+    background: white;
+}
